@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/navbar'); -%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: black">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>G test</h1>
+                            <h2 class="subheading">Please Confirm your information</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="my-5">
+                            <form action="/edit_details/<%=g2collection2[0].license%>" method="POST">
+                                <div class="form-floating">
+                                    <input class="form-control"  value="<%=g2collection2[0].firstname %>" readonly/>
+                                    <label for="firstname">Firstname</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" value="<%=g2collection2[0].lastname %>" readonly/>
+                                    <label for="lastname">Lastname</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" value="<%=g2collection2[0].age %>" readonly/>
+                                    <label for="age">Age</label>    
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" value="<%=g2collection2[0].license %>" readonly/>
+                                    <label for="license">Licesnce</label>
+                                </div>
+                                <h4>Car details</h4>
+                                <div class="form-floating">
+                                    <input class="form-control" name="make" value="<%=g2collection2[0].carDetails.make%>" readonly/>
+                                    <label for="make">Make</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" name="model" value="<%=g2collection2[0].carDetails.model %>" readonly/>
+                                    <label for="make">Model</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" name="year" value="<%=g2collection2[0].carDetails.year %>" readonly/>
+                                    <label for="make">Year</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" name="plateno" value="<%=g2collection2[0].carDetails.plateno%>" readonly/>
+                                    <label for="plateno">Plate number</label>
+                                </div>
+                                <br>
+                                <button class="btn btn-primary text-uppercase " id="loginButton" type="submit">Edit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('layouts/footer'); -%>
+        <%- include('layouts/scripts'); -%>
+    </body>
+</html>

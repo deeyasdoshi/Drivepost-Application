@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/navbar'); -%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: black">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>SignUp</h1>
+                            <span class="subheading">Connect with us by signing up!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <form action="/user/signUp" method="POST">
+                            <div class="form-floating">
+                                <input class="form-control" id="username" name="username" type="text" placeholder="Enter your username" />
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="password" name="password" type="password" placeholder="Enter your username" />
+                                <label for="password">password</label>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="confirmpassword" type="text" placeholder="Enter your password again" />
+                                <label for="confirmpassword">Confirm password</label>
+                            </div>
+                            <div class="form-floating">
+                                <label for="userType">User Type</label>
+                                <br><br>
+                                <select id="userType" name="userType">
+                                  <option value="driver">Driver</option>
+                                  <option value="examiner">Examiner</option>
+                                  <option value="admin">Admin</option>
+                                </select> 
+                            </div>
+                            <br>
+                            <button class="btn btn-primary text-uppercase " id="createAccount" type="submit">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('layouts/footer'); -%>
+        <%- include('layouts/scripts'); -%>
+    </body>
+</html>
