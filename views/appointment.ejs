@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/navbar'); -%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: black">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Open Slots</h1>
+                            <h2 class="subheading">Add Time Slots to make it available to be booked</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="my-5">
+                            <form action="/appointmentBooked" id="appointmentForm" method="POST">
+                                <input type="hidden" name="selectedDate" id="selectedDate" value="<%=selectedDate%>">
+                                <p>Available slots for <b> date : <%=selectedDate%></b> are</p>
+                                <br>
+                                <div class="time-slots">
+                                    <%if(bookedSlotArray[0]){%>
+                                        <% actualTimeSlots.forEach(slot => { %>
+                                            <%for(i=0;i<bookedSlotArray.length;i++){%>
+                                                <%if(slot===bookedSlotArray[i]){%>
+                                                    <input class="time-slot-btn" type="button" value="<%= slot%>" style="background-color: gray;color: white;" disabled>
+                                                <%}%>
+                                            <%}%>
+                                            <%for(i=0;i<filteredArray.length;i++){%>
+                                                <%if(slot===filteredArray[i]){%>
+                                                    <input class="time-slot-btn" type="button" value="<%= filteredArray[i] %>"/>
+                                                <%}%>
+                                            <%}%>
+                                        <% }); %>
+                                    <%}else{%>
+                                        <%for(i=0;i<actualTimeSlots.length;i++){%>
+                                            <input class="time-slot-btn" type="button" value="<%= actualTimeSlots[i] %>"/>
+                                        <%}%>
+                                    <%}%>
+                                    <input type="hidden" id="selected-timeslot" name="selectedTime" value="">
+                                </div>
+                                
+                                <br>
+                                <button class="btn btn-primary text-uppercase" id="saveAppointments"  type="submit">Add</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('layouts/footer'); -%>
+        <%- include('layouts/appointmentScript')-%>
+    </body>
+</html>
