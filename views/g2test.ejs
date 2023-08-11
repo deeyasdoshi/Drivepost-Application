@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/navbar'); -%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-color:rgb(52, 51, 51);">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>G2 Test</h1>
+                            <!-- <span class="subheading">This is what I do.</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="my-5">
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <form id="contactForm" action="/g2test/store" method="POST">
+                                <div class="form-floating">
+                                    <input class="form-control" id="firstname" name="firstname" type="text" value="<%= drivepost[0].firstname %>" placeholder="Enter your firstname..."  />
+                                    <label for="firstname">Firstname</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="lastname" name="lastname" type="text" value="<%= drivepost[0].lastname %>" placeholder="Enter your lastname..."  />
+                                    <label for="lastname">Lastname</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="license" name="license" type="text" value="<%= drivepost[0].license %>" placeholder="Enter your license number..."  />
+                                    <label for="license">License Number</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="age" name="age" type="number" value="<%= drivepost[0].age %>" placeholder="Enter your age..."  />
+                                    <label for="age">Age</label>
+                                </div>
+                                <h5>Car Details</h5>
+                                <div class="form-floating">
+                                    <input class="form-control" id="make" name="make" type="text" value="<%= drivepost[0].make %>" placeholder="Enter your car make details..."  />
+                                    <label for="make">Make</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="model" name="model" type="text" value="<%= drivepost[0].model %>" placeholder="Enter your car model details..."  />
+                                    <label for="model">Model</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="year" name="year" type="text" value="<%= drivepost[0].year %>" placeholder="Enter year details..."  />
+                                    <label for="year">Year</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="platenumber" name="platenumber" type="text" value="<%= drivepost[0].platenumber %>" placeholder="Enter your car plate_number details..."  />
+                                    <label for="platenumber">Plate Number</label>
+                                </div>
+                                <br /> <br />
+                                
+                                <br />
+                                <!-- Submit success message-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit</button>
+                            </form>
+
+                            <form id="g2_test_appointment_form" action="/g2_test/appointmentBooked" method="POST">
+                                <h3>Book an Appointment</h3>
+                                <div class="form-floating" id="selectedDateDiv">
+                                    <input type="date" id="selectedDate" class="form-control" name="selectedDate">
+                                    <label for="selectedDate">select a date</label>
+                                </div>
+                                <br>
+                                <input type="hidden" id="selected-timeslot" name="selectedTime" value="">
+
+                                <button class="btn btn-primary text-uppercase " id="submitButton" type="submit">Book now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <%- include('layouts/footer'); -%>
+        <!--Scripts-->
+        <%- include('layouts/scripts'); -%>
+        <%- include('layouts/g2_test_script'); -%>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    </body>
+</html>

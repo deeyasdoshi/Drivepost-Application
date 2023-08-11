@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/navbar'); -%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-color:rgb(52,51,51);">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Book your G test here</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h3><b>Your details has been updated successfully!</b></h3>
+                        <div class="my-5">
+                                <p><b>Firstname: </b><%=driveposts4[0].firstname %></p>
+                                <p><b>Lastname: </b><%=driveposts4[0].lastname %></p>
+                                <p><b>Age: </b><%=driveposts4[0].age %></p>
+                                <p><b>Licesnce: </b><%=driveposts4[0].license %></p>
+                                <p><b>Make: </b><%=driveposts4[0].make %></p>
+                                <p><b>Model: </b><%=driveposts4[0].model %></p>
+                                <p><b>Year: </b><%=driveposts4[0].year %></p>
+                                <p><b>plate number: </b><%=driveposts4[0].platenumber%></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('layouts/footer'); -%>
+        <%- include('layouts/scripts'); -%>
+    </body>
+</html>
